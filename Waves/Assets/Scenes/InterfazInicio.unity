@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 800915075}
   - component: {fileID: 800915074}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button_music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -691,8 +691,9 @@ GameObject:
   - component: {fileID: 1173876186}
   - component: {fileID: 1173876185}
   - component: {fileID: 1173876184}
+  - component: {fileID: 1173876187}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button_play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -759,7 +760,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1173876185}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1173876187}
+        m_MethodName: CargarNivel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Progreso
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1173876185
@@ -800,6 +812,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173876182}
   m_CullTransparentMesh: 0
+--- !u!114 &1173876187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173876182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58985eaa0c1d6814eb2edd2d38f7182f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1224029420
 PrefabInstance:
   m_ObjectHideFlags: 0

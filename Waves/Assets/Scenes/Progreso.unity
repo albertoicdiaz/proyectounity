@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1212,12 +1212,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1273232905484475782}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1187039761 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7902637969950465967, guid: df22316454f55814488d33dc6f0bc5b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 2941267906634202789}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1222820073 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3589386468952323024, guid: d15e16bb0ad707246b7ec4b54cc384b2,
@@ -1758,7 +1752,7 @@ GameObject:
   - component: {fileID: 1513594238}
   - component: {fileID: 1513594237}
   m_Layer: 5
-  m_Name: Button_forward
+  m_Name: Button_back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1826,7 +1820,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 960983531}
         m_MethodName: CargarNivel
         m_Mode: 5
         m_Arguments:
@@ -1834,7 +1828,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Actividades
+          m_StringArgument: InterfazInicio
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2204,7 +2198,7 @@ GameObject:
   - component: {fileID: 1811328909}
   - component: {fileID: 1811328908}
   m_Layer: 5
-  m_Name: Button_forward (1)
+  m_Name: Button_forward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2272,7 +2266,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 960983531}
         m_MethodName: CargarNivel
         m_Mode: 5
         m_Arguments:
@@ -2651,7 +2645,7 @@ Transform:
   m_LocalPosition: {x: -27.73999, y: -11.667053, z: 0.45604706}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1187039761}
+  - {fileID: 2941267906634202790}
   - {fileID: 608969050749974303}
   m_Father: {fileID: 1653160742}
   m_RootOrder: 0
@@ -2796,8 +2790,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 066676e172de4e744bf8be396801dc41, type: 3}
 --- !u!4 &608969050749974303 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5471293685836728222, guid: 066676e172de4e744bf8be396801dc41,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 608969050749974302}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &957251653229472248
@@ -3022,11 +3015,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2044865645}
     m_Modifications:
-    - target: {fileID: 6624960553947213244, guid: df22316454f55814488d33dc6f0bc5b3,
-        type: 3}
-      propertyPath: m_Name
-      value: PastilleroPrefab
-      objectReference: {fileID: 0}
     - target: {fileID: 7902637969950465967, guid: df22316454f55814488d33dc6f0bc5b3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3082,8 +3070,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6624960553947213244, guid: df22316454f55814488d33dc6f0bc5b3,
+        type: 3}
+      propertyPath: m_Name
+      value: PastilleroPrefab
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df22316454f55814488d33dc6f0bc5b3, type: 3}
+--- !u!4 &2941267906634202790 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 2941267906634202789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4184486641452699468
 PrefabInstance:
   m_ObjectHideFlags: 0
