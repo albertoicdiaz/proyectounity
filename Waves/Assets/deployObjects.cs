@@ -2,45 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class deployObject : MonoBehaviour {
-    public GameObject fishPrefab;
+public class deployObjects : MonoBehaviour {
+    public GameObject objectPrefab, boatPrefab;
     public float respawnTime = 1.0f;
-    private Vector2 screenBounds;
-    private int x;
-    public float speed;
+    //private Vector2 screenBounds;
+    private int x,count;
+    private float z,b;
 
     // Use this for initialization
     void Start () {
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        StartCoroutine(asteroidWave());
+      //  screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        StartCoroutine(generateTrash());
+        z = 190;
+        count = 1;
     }
-    private void spawnEnemy(){
-        x = Random.Range(0, 2);
-        Debug.Log(x);
-        GameObject a = Instantiate(fishPrefab) as GameObject;
-        if (x == 0) // 0 izquierda, 1 derecha
-        {
-         //   a.transform.position = new Vector3(Random.Range(-30,40), 0, ,);
-        }
-        else
-        {
-            if (x == 1)
-            {
-                a.transform.Rotate(0, 180, 0);
-                a.transform.position = new Vector2(374, Random.Range(450, 550));
-                speed = -50;
-            }
-        }
+    private void spawnTrash(){
+        b=boatPrefab.GetComponent<Transform>().position.z;
+        Debug.Log(b);
+        GameObject a = Instantiate(objectPrefab) as GameObject;
+        x = Random.Range(-22, 120);
+        //Debug.Log(x);
+        a.transform.position = new Vector3(x, 1,z);
+        z += 10;
     }
 
-    IEnumerator asteroidWave(){
-        while(true){
+    IEnumerator generateTrash(){
+        while(count<=15){
             yield return new WaitForSeconds(respawnTime);
-            spawnEnemy();
+            spawnTrash();
+            Debug.Log("contador: " + count);
+            count += 1;
         }
     }
     void Update()
     {
-        //transform.Translate(Vector3.forward * Time.deltaTime * speed);
+
     }
 }
