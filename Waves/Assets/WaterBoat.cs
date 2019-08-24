@@ -19,7 +19,6 @@ public class WaterBoat : MonoBehaviour
     protected Quaternion StartRotation;
     protected ParticleSystem ParticleSystem;
     protected Camera Camera;
-
     //internal Properties
     protected Vector3 CamVel;
 
@@ -43,7 +42,6 @@ public class WaterBoat : MonoBehaviour
             steer = 1;
         if (Input.GetKey(KeyCode.D))
             steer = -1;
-
 
         //Rotational Force
         Rigidbody.AddForceAtPosition(steer * transform.right * SteerPower / 100f, Motor.position);
@@ -77,6 +75,12 @@ public class WaterBoat : MonoBehaviour
         //camera position
         //Camera.transform.LookAt(transform.position + transform.forward * 6f + transform.up * 2f);
         //Camera.transform.position = Vector3.SmoothDamp(Camera.transform.position, transform.position + transform.forward * -8f + transform.up * 2f, ref CamVel, 0.05f);
+        //
+        //Vector3 currentRotation = transform.localRotation.eulerAngles;
+        //currentRotation.x = Mathf.Clamp(currentRotation.x, minRotationx, maxRotationx);
+        //currentRotation.z = Mathf.Clamp(currentRotation.z, minRotationz, maxRotationz);
+        //transform.localRotation = Quaternion.Euler(currentRotation);
+        //
     }
 
 }
