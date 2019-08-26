@@ -1,43 +1,113 @@
 fileFormatVersion: 2
 guid: 036bff0db5f85c248ae183e93c0a4e57
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Boat
-    100002: //RootNode
-    100004: Extras
-    100006: Will
-    100008: Motor
-    400000: Boat
-    400002: //RootNode
-    400004: Extras
-    400006: Will
-    400008: Motor
-    2100000: Blue
-    2100002: Ring
-    2100004: Down
-    2100006: Inner
-    2100008: Wood
-    2100010: Material
-    2100012: will_jean
-    2100014: Will_Skin
-    2100016: gubbkeps1
-    2100018: will_tshirt
-    2100020: will_shoes
-    2300000: Boat
-    2300002: Extras
-    2300004: Will
-    2300006: //RootNode
-    2300008: Motor
-    3300000: Boat
-    3300002: Extras
-    3300004: Will
-    3300006: //RootNode
-    3300008: Motor
-    4300000: Boat
-    4300002: Extras
-    4300004: Will
-    4300006: Motor
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Boat
+  - first:
+      1: 100002
+    second: //RootNode
+  - first:
+      1: 100004
+    second: Extras
+  - first:
+      1: 100006
+    second: Will
+  - first:
+      1: 100008
+    second: Motor
+  - first:
+      4: 400000
+    second: Boat
+  - first:
+      4: 400002
+    second: //RootNode
+  - first:
+      4: 400004
+    second: Extras
+  - first:
+      4: 400006
+    second: Will
+  - first:
+      4: 400008
+    second: Motor
+  - first:
+      21: 2100000
+    second: Blue
+  - first:
+      21: 2100002
+    second: Ring
+  - first:
+      21: 2100004
+    second: Down
+  - first:
+      21: 2100006
+    second: Inner
+  - first:
+      21: 2100008
+    second: Wood
+  - first:
+      21: 2100010
+    second: Material
+  - first:
+      21: 2100012
+    second: will_jean
+  - first:
+      21: 2100014
+    second: Will_Skin
+  - first:
+      21: 2100016
+    second: gubbkeps1
+  - first:
+      21: 2100018
+    second: will_tshirt
+  - first:
+      21: 2100020
+    second: will_shoes
+  - first:
+      23: 2300000
+    second: Boat
+  - first:
+      23: 2300002
+    second: Extras
+  - first:
+      23: 2300004
+    second: Will
+  - first:
+      23: 2300006
+    second: //RootNode
+  - first:
+      23: 2300008
+    second: Motor
+  - first:
+      33: 3300000
+    second: Boat
+  - first:
+      33: 3300002
+    second: Extras
+  - first:
+      33: 3300004
+    second: Will
+  - first:
+      33: 3300006
+    second: //RootNode
+  - first:
+      33: 3300008
+    second: Motor
+  - first:
+      43: 4300000
+    second: Boat
+  - first:
+      43: 4300002
+    second: Extras
+  - first:
+      43: 4300004
+    second: Will
+  - first:
+      43: 4300006
+    second: Motor
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -95,7 +165,7 @@ ModelImporter:
       name: will_tshirt
     second: {fileID: 2100000, guid: 65c2afca4496c0b42875e63f53fa217c, type: 2}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -128,6 +198,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 0
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -135,18 +206,19 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -155,10 +227,11 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -168,6 +241,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
