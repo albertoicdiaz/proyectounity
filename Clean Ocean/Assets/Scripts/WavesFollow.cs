@@ -17,6 +17,6 @@ public class WavesFollow : MonoBehaviour
     void Update()
     {
         y = -0.44;
-        transform.position = new Vector3(boatPrefab.GetComponent<Transform>().position.x-70, positionObject.GetComponent<Transform>().position.y, boatPrefab.GetComponent<Transform>().position.z+10);
+        transform.position = new Vector3(boatPrefab.GetComponent<Transform>().position.x-70, positionObject.GetComponent<Transform>().position.y, boatPrefab.GetComponent<Transform>().position.z-10);
     }
 }
