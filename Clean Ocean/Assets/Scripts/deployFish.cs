@@ -16,18 +16,17 @@ public class deployFish : MonoBehaviour {
         Debug.Log("ancho: " + Screen.width);
         Debug.Log("screenboundsx" + screenBounds.x);
         Debug.Log("screenboundsy" + screenBounds.y);
-        count = 0;
-
-        StartCoroutine(asteroidWave());
+        StartCoroutine(generateFish());
+        count = 1;
     }
-    private void spawnEnemy(){
+    private void spawnFish(){
         x = Random.Range(0, 6);
         Debug.Log(x);
    
         if (x == 0 || x == 1 || x == 2 || x == 3 || x == 4) // 0 izquierda, 1 derecha
         {
             GameObject a = Instantiate(fishleftPrefab) as GameObject;
-            a.transform.position = new Vector2(screenBounds.x, ((screenBounds.y / 2) + Random.Range(-20, 20)));
+            a.transform.position = new Vector3(screenBounds.x-20, (screenBounds.y / 2) + Random.Range(-20, 20), Random.Range(-2,-10));
             //transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
         else
@@ -36,25 +35,18 @@ public class deployFish : MonoBehaviour {
             {
                 GameObject a = Instantiate(fishrightPrefab) as GameObject;
                 //a.transform.position = new Vector2(374, Random.Range(450, 550));
-                a.transform.position = new Vector2(screenBounds.x, ((screenBounds.y / 2) + Random.Range(-20, 20)));
+                a.transform.position = new Vector3(screenBounds.x/2, (screenBounds.y / 2) + Random.Range(25, 45), Random.Range(-2,-10));
             }
         }
 
     }
 
-    IEnumerator asteroidWave(){
-        while(true){
+    IEnumerator generateFish(){
+        while(count<=15){
+            yield return new WaitForSeconds(respawnTime);
+            spawnFish();
+            Debug.Log("contador: " + count);
             count += 1;
-            Debug.Log("count" + count);
-            if (count >= 15)
-            {
-                yield return new WaitForSeconds(respawnTime);
-                spawnEnemy();
-            }
-            //else
-            //{
-                
-            //}
 
         }
     }
