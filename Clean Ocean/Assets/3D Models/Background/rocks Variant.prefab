@@ -24,7 +24,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: ba031549189e19a409ab9f20ee99f0f5,
         type: 3}
       propertyPath: m_Name
-      value: rocks
+      value: rocks Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7550249315225527451, guid: ba031549189e19a409ab9f20ee99f0f5,
         type: 3}
@@ -89,17 +89,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: ba031549189e19a409ab9f20ee99f0f5,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ba031549189e19a409ab9f20ee99f0f5,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ba031549189e19a409ab9f20ee99f0f5,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: -932158633070770796, guid: ba031549189e19a409ab9f20ee99f0f5,
         type: 3}
