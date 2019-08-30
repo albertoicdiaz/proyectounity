@@ -2,18 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Ball : MonoBehaviour
 {
-    public float speed =4f;
-    // Start is called before the first frame update
-    void Start()
+
+    // gravity constant
+    public float g = 9.8f;
+
+    void FixedUpdate()
     {
-        
+        // normalize axis
+        var gravity = new Vector3(
+            Input.acceleration.x,
+            Input.acceleration.z,
+            Input.acceleration.y
+        ) * g*-1;
+
+        GetComponent<Rigidbody>().AddForce(gravity, ForceMode.Acceleration);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position += new Vector3(Input.acceleration.x,Input.acceleration.y,0)*Time.deltaTime*speed;
-    }
 }

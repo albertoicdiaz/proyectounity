@@ -4,19 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class deployFish : MonoBehaviour {
+public class deployFish : MonoBehaviour
+{
     public GameObject fish1, fish2, fish3, fish4, fish5;
     public float respawnTime = 1.0f;
     private Vector2 screenBounds;
-    private int x, count,fishtype,question,randomquestion;
-    public float speed=10f;
+    private int fishtype, question, randomquestion;
+    public float speed = 10f, respuestacorrecta;
     public float[] countfish;
-    public Text text_panel,respuesta1,respuesta2,respuesta3;
-    public RectTransform respuestas,correcto,incorrecto;
+    public int count,cantpeces;
+    public Text text_panel, respuesta1, respuesta2, respuesta3;
+    public RectTransform respuestas, correcto, incorrecto;
     private string text_answer1, text_answer2, text_answer3;
     //public float[] positionz;
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         //Debug.Log("alto: " + Screen.height);
         //Debug.Log("ancho: " + Screen.width);
@@ -60,46 +63,48 @@ public class deployFish : MonoBehaviour {
 
         count = 1;
         countfish = new float[5];
+        cantpeces = Random.Range(3, 16);
         StartCoroutine(generateFish());
 
     }
-    private void spawnFish(){
-        x = Random.Range(0, 6);
+    private void spawnFish()
+    {
+        //x = Random.Range(0, 6);
         fishtype = Random.Range(0, 5);
-        Debug.Log(x);
+        //fishtype = 0;
 
         if (fishtype == 0)
         {
             GameObject a = Instantiate(fish1) as GameObject;
-            a.transform.position = new Vector2(screenBounds.x - 100, (screenBounds.y + Random.Range(100,1000)));
+            a.transform.position = new Vector2(screenBounds.x - 100, (screenBounds.y+ Random.Range(100,600)));
             countfish[0] = countfish[0] + 1;
         }
 
-        if (fishtype == 1)
+        else if (fishtype == 1)
         {
             GameObject a = Instantiate(fish2) as GameObject;
-            a.transform.position = new Vector2(screenBounds.x - 100, (screenBounds.y + Random.Range(100, 1000)));
+            a.transform.position = new Vector2(screenBounds.x - 100, (screenBounds.y + Random.Range(100, 650)));
             countfish[1] = countfish[1] + 1;
         }
 
-        if (fishtype == 2)
+        else if (fishtype == 2)
         {
             GameObject a = Instantiate(fish3) as GameObject;
-            a.transform.position = new Vector2(screenBounds.x - 100, (screenBounds.y + Random.Range(100, 1000)));
+            a.transform.position = new Vector2(screenBounds.x - 100, (screenBounds.y + Random.Range(100, 650)));
             countfish[2] = countfish[2] + 1;
         }
 
-        if (fishtype == 3)
+        else if (fishtype == 3)
         {
             GameObject a = Instantiate(fish4) as GameObject;
-            a.transform.position = new Vector2(screenBounds.x - 100, (screenBounds.y + Random.Range(100, 1000)));
+            a.transform.position = new Vector2(screenBounds.x - 100, (screenBounds.y + Random.Range(100, 650)));
             countfish[3] = countfish[3] + 1;
         }
 
-        if (fishtype == 4)
+        else if (fishtype == 4)
         {
             GameObject a = Instantiate(fish5) as GameObject;
-            a.transform.position = new Vector2(screenBounds.x - 100, (screenBounds.y + Random.Range(100, 1000)));
+            a.transform.position = new Vector2(screenBounds.x - 100, (screenBounds.y + Random.Range(100, 650)));
             countfish[4] = countfish[4] + 1;
         }
 
@@ -124,80 +129,74 @@ public class deployFish : MonoBehaviour {
 
     }
 
-    IEnumerator generateFish(){
-        while(count<=10){
+    IEnumerator generateFish()
+    {
+        while (count <= cantpeces)
+        {
             yield return new WaitForSeconds(respawnTime);
-            var aux = new float [1];
-            aux[0] = 2;
-            GameObject.Find("Respuesta1").GetComponentInChildren<Text>().text = (aux[0]+1).ToString();
+            //var aux = new float [1];
+            //aux[0] = 2;
+            //GameObject.Find("Respuesta1").GetComponentInChildren<Text>().text = (aux[0]+1).ToString();
             spawnFish();
-            Debug.Log("contador: " + count);
             count += 1;
 
         }
-        yield return new WaitForSeconds(6);
+        Debug.Log("contador: " + count);
+        respuestacorrecta = countfish[question];
+        yield return new WaitForSeconds(5);
         //¿Cuántos         ves?
         text_panel.text = ("¿Cuántos         viste?");
         randomquestion = Random.Range(0, 3);
-        Debug.Log("random question: " + randomquestion);
+        Debug.Log("CONTADOR FINAL DE PECES: " + countfish[question]);
 
         if (randomquestion == 0)
         {
-            GameObject.Find("Respuesta1").GetComponentInChildren<Text>().text = (countfish[question]).ToString();
-            Debug.Log("Respuesta : " + countfish[question].ToString());
+            respuesta1.GetComponentInChildren<Text>().text = (countfish[question]).ToString();
             randomquestion = Random.Range(0, 2);
-            Debug.Log("random question2: " + randomquestion);
             if (randomquestion == 0)
             {
-                GameObject.Find("Respuesta2").GetComponentInChildren<Text>().text = (countfish[question] + 1).ToString();
-                GameObject.Find("Respuesta3").GetComponentInChildren<Text>().text = (countfish[question] + 2).ToString();
+                respuesta2.GetComponentInChildren<Text>().text = (countfish[question] + 1).ToString();
+                respuesta3.GetComponentInChildren<Text>().text = (countfish[question] + 2).ToString();
             }
             else
             {
-                GameObject.Find("Respuesta3").GetComponentInChildren<Text>().text = (countfish[question] + 1).ToString();
-                GameObject.Find("Respuesta2").GetComponentInChildren<Text>().text = (countfish[question] + 2).ToString();
+                respuesta3.GetComponentInChildren<Text>().text = (countfish[question] + 1).ToString();
+                respuesta2.GetComponentInChildren<Text>().text = (countfish[question] + 2).ToString();
             }
         }
 
-        if (randomquestion == 1)
+        else if (randomquestion == 1)
         {
-            GameObject.Find("Respuesta2").GetComponentInChildren<Text>().text = countfish[question].ToString();
+            respuesta2.GetComponentInChildren<Text>().text = countfish[question].ToString();
             randomquestion = Random.Range(0, 2);
             if (randomquestion == 0)
             {
-                GameObject.Find("Respuesta1").GetComponentInChildren<Text>().text = (countfish[question] + 1).ToString();
-                GameObject.Find("Respuesta3").GetComponentInChildren<Text>().text = (countfish[question] + 2).ToString();
+                respuesta1.GetComponentInChildren<Text>().text = (countfish[question] + 1).ToString();
+                respuesta3.GetComponentInChildren<Text>().text = (countfish[question] + 2).ToString();
             }
             else
             {
-                GameObject.Find("Respuesta3").GetComponentInChildren<Text>().text = (countfish[question] + 1).ToString();
-                GameObject.Find("Respuesta1").GetComponentInChildren<Text>().text = (countfish[question] + 2).ToString();
-            }
-
-        }
-
-        if (randomquestion == 2)
-        {
-            GameObject.Find("Respuesta3").GetComponentInChildren<Text>().text = countfish[question].ToString();
-            randomquestion = Random.Range(0, 2);
-            if (randomquestion == 0)
-            {
-                GameObject.Find("Respuesta1").GetComponentInChildren<Text>().text = (countfish[question]+1).ToString();
-                GameObject.Find("Respuesta2").GetComponentInChildren<Text>().text = (countfish[question]+2).ToString();
-            }
-            else
-            {
-                GameObject.Find("Respuesta2").GetComponentInChildren<Text>().text = (countfish[question]+1).ToString();
-                GameObject.Find("Respuesta1").GetComponentInChildren<Text>().text = (countfish[question]+2).ToString();
+                respuesta3.GetComponentInChildren<Text>().text = (countfish[question] + 1).ToString();
+                respuesta1.GetComponentInChildren<Text>().text = (countfish[question] + 2).ToString();
             }
         }
-
         
-        respuestas.gameObject.SetActive(true);
 
- 
+        else if (randomquestion == 2)
+        {
+            respuesta3.GetComponentInChildren<Text>().text = countfish[question].ToString();
+            randomquestion = Random.Range(0, 2);
+            if (randomquestion == 0)
+            {
+                respuesta1.GetComponentInChildren<Text>().text = (countfish[question] + 1).ToString();
+                respuesta2.GetComponentInChildren<Text>().text = (countfish[question] + 2).ToString();
+            }
+            else
+            {
+                respuesta2.GetComponentInChildren<Text>().text = (countfish[question] + 1).ToString();
+                respuesta1.GetComponentInChildren<Text>().text = (countfish[question] + 2).ToString();
+            }
+        }
+            respuestas.gameObject.SetActive(true);
     }
-     
-
-
 }

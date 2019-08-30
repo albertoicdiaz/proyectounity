@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class deployObjects : MonoBehaviour {
-    public GameObject objectPrefab, boatPrefab, Trash;
+    public GameObject objectPrefab, boatPrefab;
+    private GameObject Trash;
     public float respawnTime = 1.0f;
     //private Vector2 screenBounds;
     private int x,count,trashtype;
@@ -20,67 +21,26 @@ public class deployObjects : MonoBehaviour {
         //b=boatPrefab.GetComponent<Transform>().position.z;
         //Debug.Log(b);
         x = Random.Range(-22, 120);
-        trashtype = Random.Range(1, 10);
-        if (trashtype == 1)
-        {
-            Trash = GameObject.Find("/BarrilPrefab");
-            Trash.transform.position = new Vector3(x, 1, z);
-        }
+        trashtype = Random.Range(1, 4);
+        //if (trashtype == 1)
+        //{
+        //    GameObject Trash = GameObject.Find("BarrilPrefab");
+        //    Trash.transform.position = new Vector3(x, 1, z);
+        //}
 
-        if (trashtype == 2)
-        {
-            Trash = GameObject.Find("/BasuraPrefab");
-            Trash.transform.position = new Vector3(x, 1, z);
-        }
+        //if (trashtype == 2)
+        //{
+        //    GameObject Trash = GameObject.Find("BasuraPrefab");
+        //    Trash.transform.position = new Vector3(x, 1, z);
+        //}
 
-        if (trashtype == 3)
-        {
-            Trash = GameObject.Find("/BotellaPrefab");
-            Trash.transform.position = new Vector3(x, 1, z);
-        }
+        //if (trashtype == 3)
+        //{
+        //    GameObject Trash = GameObject.Find("RuedaPrefab");
+        //    Trash.transform.position = new Vector3(x, 1, z);
+        //}
 
-        if (trashtype == 4)
-        {
-            Trash = GameObject.Find("/BottlePrefab");
-            Trash.transform.position = new Vector3(x, 1, z);
-        }
-
-        if (trashtype == 5)
-        {
-            Trash = GameObject.Find("/LataPrefab");
-            Trash.transform.position = new Vector3(x, 1, z);
-        }
-        if (trashtype == 6)
-        {
-            Trash = GameObject.Find("/LechePrefab");
-            Trash.transform.position = new Vector3(x, 1, z);
-        }
-
-        if (trashtype == 7)
-        {
-            Trash = GameObject.Find("/PastilleroPrefab");
-            Trash.transform.position = new Vector3(x, 1, z);
-        }
-
-        if (trashtype == 8)
-        {
-            Trash = GameObject.Find("/RuedaPrefab");
-            Trash.transform.position = new Vector3(x, 1, z);
-        }
-
-        if (trashtype == 9)
-        {
-            Trash = GameObject.Find("/SprayPrefab");
-            Trash.transform.position = new Vector3(x, 1, z);
-        }
-
-        if (trashtype == 10)
-        {
-            Trash = GameObject.Find("/VasoPrefab");
-            Trash.transform.position = new Vector3(x, 1, z);
-        }
         //GameObject a = Instantiate(objectPrefab) as GameObject;
-        ////Debug.Log(x);
         //a.transform.position = new Vector3(x, 1,z);
         z += 10;
     }

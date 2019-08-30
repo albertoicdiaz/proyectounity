@@ -19,8 +19,8 @@ public class ObjectsRespawn : MonoBehaviour
         if (transform.position.z < boatPrefab.GetComponent<Transform>().position.z-10)
         {
             x = Random.Range(-22, 120);
-
-            transform.position = new Vector3(x, 1, boatPrefab.GetComponent<Transform>().position.z + 190);
+            
+            transform.position = new Vector3(x, 1, boatPrefab.GetComponent<Transform>().position.z + 10);
         }
     }
 }
