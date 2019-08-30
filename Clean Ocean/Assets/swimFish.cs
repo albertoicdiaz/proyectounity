@@ -8,14 +8,15 @@ public class swimFish : MonoBehaviour
     public float speed;
     public float turnspeed = 10f;
     bool rotating = false;
-    private float eulerangle;
+    private float eulerangle, rotationy, rotationx, angley, anglex;
     private int eulerauxl, eulerauxr, randomrotation;
     public float smoothTime = 5.0f; //rotate over 5 seconds
     void Update()
     {
 
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
-        transform.Rotate(Vector3.up * turnspeed * Time.deltaTime);
+        angley = transform.eulerAngles.y;
+        anglex = transform.eulerAngles.x;
         eulerangle = transform.eulerAngles.z;
         eulerauxl = (int)eulerangle;
         eulerauxr = eulerauxl - 360;
@@ -50,10 +51,27 @@ public class swimFish : MonoBehaviour
     void OnCollisionEnter(Collision col)
     {
         print("DEBUGGG");
-        if (col.gameObject.tag == "Limits")
+        if (col.gameObject.tag == "Limit horizontal")
         {
-            transform.Rotate(Vector3.left * 90 * Time.deltaTime);
-        }            
+            print("CHOQUÉ pa los laos");
+            while (angley != (transform.eulerAngles.y-360))
+            {
+                transform.Rotate(Vector3.down * 100 * Time.deltaTime);
+
+            }
+            
+
+        }
+        if (col.gameObject.tag == "Limit vertical")
+        {
+            print("CHOQUÉ pa arriba");
+            while ((transform.eulerAngles.x-360) != anglex)
+            {
+                transform.Rotate(Vector3.left * 90 * Time.deltaTime);
+            }
+            
+
+        }
     }
 }
 
