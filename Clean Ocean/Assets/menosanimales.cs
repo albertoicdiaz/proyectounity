@@ -29,20 +29,20 @@ public class menosanimales : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        x = ((Slider.GetComponent<BarraProgreso>().act / 5));
+        x = ((BarraProgreso.act / 5));
 
 
     }
     public void disminuiranimales()
     {
-        if (Slider.GetComponent<BarraProgreso>().act >= 5)
+        if (BarraProgreso.act >= 5)
         {
             if (x == 20)
             {
                 x -= 1;
             }
             basura[x].SetActive(true);
-            Slider.GetComponent<BarraProgreso>().act -= 5;
+            BarraProgreso.act -= 5;
             countmenos += 1;
             x -= 1;
         }

@@ -45,23 +45,25 @@ public class botoncorrecto : MonoBehaviour
             }
         }
         aux.SetActive(false);
-        
+
 
         if (btn.GetComponentInChildren<Text>().text == (GameObject.Find("Main Camera").GetComponent<deployFish>().respuestacorrecta).ToString())
         {
             correcto.gameObject.SetActive(true);
             btn.GetComponent<Image>().color = Color.green;
+            respuestas.gameObject.SetActive(false);
+            Invoke("MostrarRecompensa", 3f);
+            
         }
         else
         {
             incorrecto.gameObject.SetActive(true);
         }
-        respuestas.gameObject.SetActive(false);
-        Invoke("RestartScene", 2f);
-
+        
     }
-    void RestartScene()
+    private void MostrarRecompensa()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        correcto.gameObject.SetActive(false);
+        GameObject.Find("Animales").GetComponent<Recompensas>().Recompensa();
     }
 }

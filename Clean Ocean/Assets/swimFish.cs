@@ -10,13 +10,19 @@ public class swimFish : MonoBehaviour
     bool rotating = false;
     private float eulerangle, rotationy, rotationx, angley, anglex;
     private int eulerauxl, eulerauxr, randomrotation;
+    private Vector3 direction = new Vector3(0,0,1);
     public float smoothTime = 5.0f; //rotate over 5 seconds
+
+    private void Start()
+    {
+        //var direction = new Vector3(0, 0, 1);
+    }
     void Update()
     {
 
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
-        angley = transform.eulerAngles.y;
-        anglex = transform.eulerAngles.x;
+        transform.Translate(direction * Time.deltaTime * speed);
+        angley = (transform.eulerAngles.y);
+        anglex = (transform.eulerAngles.x);
         eulerangle = transform.eulerAngles.z;
         eulerauxl = (int)eulerangle;
         eulerauxr = eulerauxl - 360;
@@ -54,23 +60,16 @@ public class swimFish : MonoBehaviour
         if (col.gameObject.tag == "Limit horizontal")
         {
             print("CHOQUÉ pa los laos");
-            while (angley != (transform.eulerAngles.y-360))
-            {
-                transform.Rotate(Vector3.down * 100 * Time.deltaTime);
-
-            }
-            
-
+            print("angley: " + (int)angley);
+            print("eulerangley: " + (int)transform.eulerAngles.y);
+            //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 180), Time.deltaTime * turnspeed);
+            direction.x *= -1; 
+                //speed = 0;
         }
         if (col.gameObject.tag == "Limit vertical")
         {
             print("CHOQUÉ pa arriba");
-            while ((transform.eulerAngles.x-360) != anglex)
-            {
-                transform.Rotate(Vector3.left * 90 * Time.deltaTime);
-            }
-            
-
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(anglex, 0, 0), Time.deltaTime * turnspeed);
         }
     }
 }

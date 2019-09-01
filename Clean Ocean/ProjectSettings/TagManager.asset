@@ -7,6 +7,7 @@ TagManager:
   - Basura
   - Limit horizontal
   - Limit vertical
+  - inicio
   layers:
   - Default
   - TransparentFX

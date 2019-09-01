@@ -8,17 +8,29 @@ public class Ball : MonoBehaviour
 
     // gravity constant
     public float g = 9.8f;
-
-    void FixedUpdate()
+    private void Update()
     {
-        // normalize axis
-        var gravity = new Vector3(
-            Input.acceleration.x,
-            Input.acceleration.z,
-            Input.acceleration.y
-        ) * g*-1;
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (Input.GetKey(KeyCode.A))
+            rb.AddForce(Vector3.left);
+        if (Input.GetKey(KeyCode.D))
+            rb.AddForce(Vector3.right);
+        if (Input.GetKey(KeyCode.W))
+            rb.AddForce(Vector3.up);
+        if (Input.GetKey(KeyCode.S))
+            rb.AddForce(Vector3.down);
 
-        GetComponent<Rigidbody>().AddForce(gravity, ForceMode.Acceleration);
     }
+    //void FixedUpdate()
+    //{
+    //    // normalize axis
+    //    var gravity = new Vector3(
+    //        Input.acceleration.x,
+    //        Input.acceleration.z,
+    //        Input.acceleration.y
+    //    ) * g*-1;
+
+    //    GetComponent<Rigidbody>().AddForce(gravity, ForceMode.Acceleration);
+    //}
 
 }

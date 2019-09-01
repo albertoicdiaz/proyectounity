@@ -17,7 +17,7 @@ public class Barco : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		dirX = Input.acceleration.x * speed;
-		transform.position += new Vector3(Input.acceleration.x * Time.deltaTime * speed,0.81f,speed);
+		transform.position += new Vector3(Input.acceleration.x * Time.deltaTime * speed,0,speed);
         transform.rotation = Quaternion.identity;
     }
 

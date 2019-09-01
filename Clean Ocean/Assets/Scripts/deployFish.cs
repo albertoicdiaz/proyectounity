@@ -152,51 +152,53 @@ public class deployFish : MonoBehaviour
         if (randomquestion == 0)
         {
             respuesta1.GetComponentInChildren<Text>().text = (countfish[question]).ToString();
-            randomquestion = Random.Range(0, 2);
-            if (randomquestion == 0)
+            var aux1 = Random.Range(0, cantpeces);
+            var aux2 = Random.Range(0, cantpeces);
+            while (aux1 == respuestacorrecta || aux1 == aux2)
             {
-                respuesta2.GetComponentInChildren<Text>().text = (countfish[question] + 1).ToString();
-                respuesta3.GetComponentInChildren<Text>().text = (countfish[question] + 2).ToString();
+                aux1 = Random.Range(0, cantpeces);
             }
-            else
+            while (aux2 == respuestacorrecta || aux2 == aux1)
             {
-                respuesta3.GetComponentInChildren<Text>().text = (countfish[question] + 1).ToString();
-                respuesta2.GetComponentInChildren<Text>().text = (countfish[question] + 2).ToString();
+                aux2 = Random.Range(0, cantpeces);
             }
+            respuesta2.GetComponentInChildren<Text>().text = (aux1).ToString();
+            respuesta3.GetComponentInChildren<Text>().text = (aux2).ToString();
         }
 
         else if (randomquestion == 1)
         {
-            respuesta2.GetComponentInChildren<Text>().text = countfish[question].ToString();
-            randomquestion = Random.Range(0, 2);
-            if (randomquestion == 0)
+            respuesta2.GetComponentInChildren<Text>().text = (countfish[question]).ToString();
+            var aux1 = Random.Range(0, cantpeces);
+            var aux2 = Random.Range(0, cantpeces);
+            while (aux1 == respuestacorrecta || aux1 == aux2)
             {
-                respuesta1.GetComponentInChildren<Text>().text = (countfish[question] + 1).ToString();
-                respuesta3.GetComponentInChildren<Text>().text = (countfish[question] + 2).ToString();
+                aux1 = Random.Range(0, cantpeces);
             }
-            else
+            while (aux2 == respuestacorrecta || aux2 == aux1)
             {
-                respuesta3.GetComponentInChildren<Text>().text = (countfish[question] + 1).ToString();
-                respuesta1.GetComponentInChildren<Text>().text = (countfish[question] + 2).ToString();
+                aux2 = Random.Range(0, cantpeces);
             }
+            respuesta1.GetComponentInChildren<Text>().text = (aux1).ToString();
+            respuesta3.GetComponentInChildren<Text>().text = (aux2).ToString();
         }
-        
 
         else if (randomquestion == 2)
         {
-            respuesta3.GetComponentInChildren<Text>().text = countfish[question].ToString();
-            randomquestion = Random.Range(0, 2);
-            if (randomquestion == 0)
+            respuesta3.GetComponentInChildren<Text>().text = (countfish[question]).ToString();
+            var aux1 = Random.Range(0, cantpeces);
+            var aux2 = Random.Range(0, cantpeces);
+            while (aux1 == respuestacorrecta || aux1 == aux2)
             {
-                respuesta1.GetComponentInChildren<Text>().text = (countfish[question] + 1).ToString();
-                respuesta2.GetComponentInChildren<Text>().text = (countfish[question] + 2).ToString();
+                aux1 = Random.Range(0, cantpeces);
             }
-            else
+            while (aux2 == respuestacorrecta || aux2 == aux1)
             {
-                respuesta2.GetComponentInChildren<Text>().text = (countfish[question] + 1).ToString();
-                respuesta1.GetComponentInChildren<Text>().text = (countfish[question] + 2).ToString();
+                aux2 = Random.Range(0, cantpeces);
             }
+            respuesta1.GetComponentInChildren<Text>().text = (aux1).ToString();
+            respuesta2.GetComponentInChildren<Text>().text = (aux2).ToString();
         }
-            respuestas.gameObject.SetActive(true);
+        respuestas.gameObject.SetActive(true);
     }
 }

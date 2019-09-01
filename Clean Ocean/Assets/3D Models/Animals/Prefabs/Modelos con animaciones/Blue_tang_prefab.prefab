@@ -672,6 +672,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9074370168814797365}
   - component: {fileID: 8967865404656203173}
+  - component: {fileID: 6704318537167128230}
   m_Layer: 0
   m_Name: Blue_tang_prefab
   m_TagString: Untagged
@@ -686,7 +687,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9078017472480602207}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.86602545, z: 0, w: 0.49999994}
   m_LocalPosition: {x: 0.014323, y: 7.2226, z: -16.031}
   m_LocalScale: {x: 0.7476393, y: 0.7476393, z: 0.7476393}
   m_Children:
@@ -694,7 +695,7 @@ Transform:
   - {fileID: 9074955577237940301}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 120, z: 0}
 --- !u!111 &8967865404656203173
 Animation:
   m_ObjectHideFlags: 0
@@ -715,6 +716,18 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &6704318537167128230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9078017472480602207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef4c18b82d4ba8042b0931d5a17005a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9078150619732226757
 GameObject:
   m_ObjectHideFlags: 0

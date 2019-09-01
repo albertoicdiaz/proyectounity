@@ -13,6 +13,7 @@ public class Pelota : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0f, 0f, 3f, Space.Self);
+        //transform.Rotate(0f, 0f, 3f, Space.Self);
+        transform.Rotate(new Vector3(0,1f,0));
     }
 }
